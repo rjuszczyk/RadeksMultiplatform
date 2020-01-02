@@ -1,0 +1,3 @@
+include ':app'
+include ':shared'
+rootProject.name='RadeksMultiplatform'
