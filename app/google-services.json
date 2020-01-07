@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "820916323111",
+    "firebase_url": "https://radeksmultiplatform.firebaseio.com",
+    "project_id": "radeksmultiplatform",
+    "storage_bucket": "radeksmultiplatform.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820916323111:android:05cc29cef4c52a95351f02",
+        "android_client_info": {
+          "package_name": "pl.rjuszczyk.radeksmultiplatform"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820916323111-c0k8iopds8sbvk36gadh2rqpkgku49bp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4D8a111RLYMulTcZElmTKnnk85fxzr4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820916323111-c0k8iopds8sbvk36gadh2rqpkgku49bp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,15 +18,13 @@
 
 package co.touchlab.sessionize.db.coroutines
 
-import co.touchlab.stately.freeze
+import co.touchlab.stately.concurrency.ThreadLocalRef
+import co.touchlab.stately.concurrency.value
 import com.squareup.sqldelight.Query
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.Channel.Factory.CONFLATED
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.mapNotNull
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext
 import kotlin.jvm.JvmName
@@ -34,26 +32,27 @@ import kotlin.jvm.JvmOverloads
 
 /** Turns this [Query] into a [Flow] which emits whenever the underlying result set changes. */
 @JvmName("toFlow")
-fun <T : Any> Query<T>.asFlow(): Flow<Query<T>> = flow {
-  emit(this@asFlow)
+fun <T : Any> Query<T>.asFlow(): Flow<Query<T>> = callbackFlow<Query<T>> {
 
-  val channel = Channel<Unit>(CONFLATED).freeze()
+  // using ThreadLocalRef as Query.Listener and all references in it get frozen on native
+  // May be removed once fixed in SQLDelight https://github.com/square/sqldelight/issues/1390
+  val onNextRef: ThreadLocalRef<() -> Unit> = ThreadLocalRef()
+  onNextRef.value = {
+    offer(this@asFlow)
+  }
+
   val listener = object : Query.Listener {
     override fun queryResultsChanged() {
-      channel.offer(Unit)
+      onNextRef.value?.invoke()
     }
   }
-
   addListener(listener)
-  try {
-    for (item in channel) {
-      emit(this@asFlow)
-    }
-  } finally {
-    println("****** Closing Flow in removeListener ******")
+  offer(this@asFlow)
+  awaitClose {
     removeListener(listener)
+    onNextRef.remove()
   }
-}
+}.conflate()
 
 @JvmOverloads
 fun <T : Any> Flow<Query<T>>.mapToOne(
@@ -93,10 +92,6 @@ fun <T : Any> Flow<Query<T>>.mapToOneNotNull(
 }
 
 @JvmOverloads
-fun <T : Any> Flow<Query<T>>.mapToList(
-  context: CoroutineContext = Dispatchers.Default
-): Flow<List<T>> = map {
-  withContext(context) {
-    it.executeAsList()
-  }
+fun <T : Any> Flow<Query<T>>.mapToList(): Flow<List<T>> = map {
+  it.executeAsList()
 }

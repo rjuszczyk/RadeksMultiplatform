@@ -6,26 +6,24 @@ import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.internal.copyOnWriteList
 import kotlin.Any
 import kotlin.Int
+import kotlin.Long
 import kotlin.String
 import kotlin.collections.MutableList
 import kotlin.reflect.KClass
+import pl.rjuszczyk.radeksmultiplatform.database.TodoModel
+import pl.rjuszczyk.radeksmultiplatform.database.TodoModelQueries
 import test.AnyNameDatabase
-import test.Coordinate2
-import test.WeatherModel
-import test.WeatherModelQueries
 
 internal val KClass<AnyNameDatabase>.schema: SqlDriver.Schema
   get() = AnyNameDatabaseImpl.Schema
 
-internal fun KClass<AnyNameDatabase>.newInstance(driver: SqlDriver,
-    WeatherModelAdapter: WeatherModel.Adapter): AnyNameDatabase = AnyNameDatabaseImpl(driver,
-    WeatherModelAdapter)
+internal fun KClass<AnyNameDatabase>.newInstance(driver: SqlDriver): AnyNameDatabase =
+    AnyNameDatabaseImpl(driver)
 
 private class AnyNameDatabaseImpl(
-  driver: SqlDriver,
-  internal val WeatherModelAdapter: WeatherModel.Adapter
+  driver: SqlDriver
 ) : TransacterImpl(driver), AnyNameDatabase {
-  override val weatherModelQueries: WeatherModelQueriesImpl = WeatherModelQueriesImpl(this, driver)
+  override val todoModelQueries: TodoModelQueriesImpl = TodoModelQueriesImpl(this, driver)
 
   object Schema : SqlDriver.Schema {
     override val version: Int
@@ -33,9 +31,11 @@ private class AnyNameDatabaseImpl(
 
     override fun create(driver: SqlDriver) {
       driver.execute(null, """
-          |CREATE TABLE WeatherModel (
-          |    coordinate TEXT,
-          |    base TEXT NOT NULL
+          |CREATE TABLE TodoModel (
+          |    id INTEGER NOT NULL,
+          |    userId INTEGER NOT NULL,
+          |    title TEXT NOT NULL,
+          |    completed INTEGER NOT NULL
           |)
           """.trimMargin(), 0)
     }
@@ -49,32 +49,45 @@ private class AnyNameDatabaseImpl(
   }
 }
 
-private class WeatherModelQueriesImpl(
+private class TodoModelQueriesImpl(
   private val database: AnyNameDatabaseImpl,
   private val driver: SqlDriver
-) : TransacterImpl(driver), WeatherModelQueries {
+) : TransacterImpl(driver), TodoModelQueries {
   internal val selectAll: MutableList<Query<*>> = copyOnWriteList()
 
-  override fun <T : Any> selectAll(mapper: (coordinate: Coordinate2?, base: String) -> T): Query<T>
-      = Query(-1657442918, selectAll, driver, "WeatherModel.sq", "selectAll", """
+  override fun <T : Any> selectAll(mapper: (
+    id: Long,
+    userId: Long,
+    title: String,
+    completed: Long
+  ) -> T): Query<T> = Query(-431734490, selectAll, driver, "TodoModel.sq", "selectAll", """
   |SELECT *
-  |FROM WeatherModel
+  |FROM TodoModel
   """.trimMargin()) { cursor ->
     mapper(
-      cursor.getString(0)?.let(database.WeatherModelAdapter.coordinateAdapter::decode),
-      cursor.getString(1)!!
+      cursor.getLong(0)!!,
+      cursor.getLong(1)!!,
+      cursor.getString(2)!!,
+      cursor.getLong(3)!!
     )
   }
 
-  override fun selectAll(): Query<WeatherModel> = selectAll(WeatherModel::Impl)
+  override fun selectAll(): Query<TodoModel> = selectAll(TodoModel::Impl)
 
-  override fun insertItem(coordinate: Coordinate2?, base: String) {
-    driver.execute(-1513722505,
-        """INSERT OR FAIL INTO WeatherModel(coordinate, base) VALUES (?1, ?2)""", 2) {
-      bindString(1, if (coordinate == null) null else
-          database.WeatherModelAdapter.coordinateAdapter.encode(coordinate))
-      bindString(2, base)
+  override fun insertItem(
+    id: Long,
+    userId: Long,
+    title: String,
+    completed: Long
+  ) {
+    driver.execute(2123500395,
+        """INSERT OR FAIL INTO TodoModel(id, userId, title, completed) VALUES (?1, ?2, ?3, ?4)""",
+        4) {
+      bindLong(1, id)
+      bindLong(2, userId)
+      bindString(3, title)
+      bindLong(4, completed)
     }
-    notifyQueries(-1513722505, {database.weatherModelQueries.selectAll})
+    notifyQueries(2123500395, {database.todoModelQueries.selectAll})
   }
 }

@@ -1,0 +1,11 @@
+CREATE TABLE TodoModel (
+    id INTEGER NOT NULL,
+    userId INTEGER NOT NULL,
+    title TEXT NOT NULL,
+    completed INTEGER NOT NULL
+);
+insertItem:
+INSERT OR FAIL INTO TodoModel(id, userId, title, completed) VALUES (?, ?, ?, ?);
+selectAll:
+SELECT *
+FROM TodoModel;

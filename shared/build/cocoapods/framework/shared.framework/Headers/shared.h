@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedTestGetResponse, SharedSqldelight_runtimeTransacterTransaction, SharedWeatherModelAdapter, SharedCoordinate2, SharedWeather, SharedWeatherModelImpl, SharedSqldelight_runtimeQuery, SharedKotlinByteArray, SharedKotlinArray, SharedKotlinx_serialization_runtimeSerialKind, SharedKotlinNothing, SharedKotlinx_serialization_runtimeUpdateMode, SharedKotlinByteIterator, SharedKotlinEnum;
+@class SharedTestGetResponse, SharedSqldelight_runtimeTransacterTransaction, SharedTodoModelImpl, SharedSqldelight_runtimeQuery, SharedTodo, SharedKotlinx_coroutines_coreMainCoroutineDispatcher, SharedTodosApi, SharedNativeMainViewModel, SharedTodosRepository, SharedNativeMainViewModelFailed, SharedNativeMainViewModelLoaded, SharedNativeMainViewModelLoading, SharedNativeMainViewModelLoadingFailed, SharedTodosDatabase, SharedKtor_client_coreHttpClient, SharedKotlinAbstractCoroutineContextElement, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinByteArray, SharedKtor_client_coreHttpClientConfig, SharedKtor_client_coreHttpClientEngineConfig, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKotlinArray, SharedKotlinx_serialization_runtimeSerialKind, SharedKotlinNothing, SharedKotlinx_serialization_runtimeUpdateMode, SharedKotlinByteIterator, SharedKtor_utilsAttributeKey, SharedKtor_client_coreProxyConfig, SharedKtor_utilsPipelinePhase, SharedKtor_utilsPipeline, SharedKotlinEnum, SharedKtor_httpUrl, SharedKtor_httpURLProtocol;
 
-@protocol SharedKotlinx_serialization_runtimeKSerializer, SharedWeatherModelQueries, SharedSqldelight_runtimeTransacter, SharedAnyNameDatabase, SharedSqldelight_runtimeSqlDriver, SharedSqldelight_runtimeSqlDriverSchema, SharedSqldelight_runtimeColumnAdapter, SharedWeatherModel, SharedSqldelight_runtimeSqlCursor, SharedSqldelight_runtimeQueryListener, SharedKotlinx_coroutines_coreFlow, SharedKotlinCoroutineContext, SharedCancelable, SharedKotlinx_serialization_runtimeEncoder, SharedKotlinx_serialization_runtimeSerialDescriptor, SharedKotlinx_serialization_runtimeSerializationStrategy, SharedKotlinx_serialization_runtimeDecoder, SharedKotlinx_serialization_runtimeDeserializationStrategy, SharedSqldelight_runtimeSqlPreparedStatement, SharedSqldelight_runtimeCloseable, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinx_serialization_runtimeCompositeEncoder, SharedKotlinx_serialization_runtimeSerialModule, SharedKotlinAnnotation, SharedKotlinx_serialization_runtimeCompositeDecoder, SharedKotlinIterator, SharedKotlinx_serialization_runtimeSerialModuleCollector, SharedKotlinKClass, SharedKotlinComparable, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier;
+@protocol SharedKotlinx_serialization_runtimeKSerializer, SharedTodoModelQueries, SharedSqldelight_runtimeTransacter, SharedAnyNameDatabase, SharedSqldelight_runtimeSqlDriver, SharedSqldelight_runtimeSqlDriverSchema, SharedKotlinx_coroutines_coreFlow, SharedTodoModel, SharedNativeMainViewModelState, SharedNativeMainViewModelLoadingState, SharedSqldelight_runtimeSqlCursor, SharedSqldelight_runtimeQueryListener, SharedKotlinCoroutineContext, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_serialization_runtimeEncoder, SharedKotlinx_serialization_runtimeSerialDescriptor, SharedKotlinx_serialization_runtimeSerializationStrategy, SharedKotlinx_serialization_runtimeDecoder, SharedKotlinx_serialization_runtimeDeserializationStrategy, SharedSqldelight_runtimeSqlPreparedStatement, SharedSqldelight_runtimeCloseable, SharedKotlinCoroutineContextKey, SharedKotlinCoroutineContextElement, SharedKotlinContinuation, SharedKotlinContinuationInterceptor, SharedKotlinx_coroutines_coreRunnable, SharedKtor_ioCloseable, SharedKtor_client_coreHttpClientEngine, SharedKtor_utilsAttributes, SharedKotlinx_serialization_runtimeCompositeEncoder, SharedKotlinx_serialization_runtimeSerialModule, SharedKotlinAnnotation, SharedKotlinx_serialization_runtimeCompositeDecoder, SharedKtor_client_coreHttpClientFeature, SharedKotlinSuspendFunction2, SharedKotlinIterator, SharedKotlinx_serialization_runtimeSerialModuleCollector, SharedKotlinKClass, SharedKotlinComparable, SharedKotlinFunction, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKtor_httpParameters, SharedKotlinMapEntry, SharedKtor_utilsStringValues;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -180,7 +180,7 @@ __attribute__((swift_name("Sqldelight_runtimeTransacter")))
 __attribute__((swift_name("AnyNameDatabase")))
 @protocol SharedAnyNameDatabase <SharedSqldelight_runtimeTransacter>
 @required
-@property (readonly) id<SharedWeatherModelQueries> weatherModelQueries __attribute__((swift_name("weatherModelQueries")));
+@property (readonly) id<SharedTodoModelQueries> todoModelQueries __attribute__((swift_name("todoModelQueries")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -189,96 +189,205 @@ __attribute__((swift_name("AnyNameDatabaseCompanion")))
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-- (id<SharedAnyNameDatabase>)invokeDriver:(id<SharedSqldelight_runtimeSqlDriver>)driver WeatherModelAdapter:(SharedWeatherModelAdapter *)WeatherModelAdapter __attribute__((swift_name("invoke(driver:WeatherModelAdapter:)")));
+- (id<SharedAnyNameDatabase>)invokeDriver:(id<SharedSqldelight_runtimeSqlDriver>)driver __attribute__((swift_name("invoke(driver:)")));
 @property (readonly) id<SharedSqldelight_runtimeSqlDriverSchema> Schema __attribute__((swift_name("Schema")));
 @end;
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Coordinate2")))
-@interface SharedCoordinate2 : KotlinBase
-- (instancetype)initWithLon:(float)lon lat:(float)lat __attribute__((swift_name("init(lon:lat:)"))) __attribute__((objc_designated_initializer));
-- (float)component1 __attribute__((swift_name("component1()")));
-- (float)component2 __attribute__((swift_name("component2()")));
-- (SharedCoordinate2 *)doCopyLon:(float)lon lat:(float)lat __attribute__((swift_name("doCopy(lon:lat:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) float lat __attribute__((swift_name("lat")));
-@property (readonly) float lon __attribute__((swift_name("lon")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Coordinate2.Companion")))
-@interface SharedCoordinate2Companion : KotlinBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-- (id<SharedKotlinx_serialization_runtimeKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Weather")))
-@interface SharedWeather : KotlinBase
-- (instancetype)initWithCoord:(SharedCoordinate2 *)coord base:(NSString *)base __attribute__((swift_name("init(coord:base:)"))) __attribute__((objc_designated_initializer));
-- (SharedCoordinate2 *)component1 __attribute__((swift_name("component1()")));
-- (NSString *)component2 __attribute__((swift_name("component2()")));
-- (SharedWeather *)doCopyCoord:(SharedCoordinate2 *)coord base:(NSString *)base __attribute__((swift_name("doCopy(coord:base:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *base __attribute__((swift_name("base")));
-@property (readonly) SharedCoordinate2 *coord __attribute__((swift_name("coord")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Weather.Companion")))
-@interface SharedWeatherCompanion : KotlinBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-- (id<SharedKotlinx_serialization_runtimeKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end;
-
-__attribute__((swift_name("WeatherModel")))
-@protocol SharedWeatherModel
+__attribute__((swift_name("Kotlinx_coroutines_coreFlow")))
+@protocol SharedKotlinx_coroutines_coreFlow
 @required
-@property (readonly) NSString *base __attribute__((swift_name("base")));
-@property (readonly) SharedCoordinate2 * _Nullable coordinate __attribute__((swift_name("coordinate")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("WeatherModelAdapter")))
-@interface SharedWeatherModelAdapter : KotlinBase
-- (instancetype)initWithCoordinateAdapter:(id<SharedSqldelight_runtimeColumnAdapter>)coordinateAdapter __attribute__((swift_name("init(coordinateAdapter:)"))) __attribute__((objc_designated_initializer));
-@property (readonly) id<SharedSqldelight_runtimeColumnAdapter> coordinateAdapter __attribute__((swift_name("coordinateAdapter")));
+__attribute__((swift_name("MutableFlow")))
+@interface SharedMutableFlow : KotlinBase <SharedKotlinx_coroutines_coreFlow>
+- (instancetype)initWithInitialValue:(id _Nullable)initialValue __attribute__((swift_name("init(initialValue:)"))) __attribute__((objc_designated_initializer));
+- (void)postValueValue:(id _Nullable)value __attribute__((swift_name("postValue(value:)")));
+@end;
+
+__attribute__((swift_name("TodoModel")))
+@protocol SharedTodoModel
+@required
+@property (readonly) int64_t completed __attribute__((swift_name("completed")));
+@property (readonly) int64_t id __attribute__((swift_name("id")));
+@property (readonly) NSString *title __attribute__((swift_name("title")));
+@property (readonly) int64_t userId __attribute__((swift_name("userId")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("WeatherModelImpl")))
-@interface SharedWeatherModelImpl : KotlinBase <SharedWeatherModel>
-- (instancetype)initWithCoordinate:(SharedCoordinate2 * _Nullable)coordinate base:(NSString *)base __attribute__((swift_name("init(coordinate:base:)"))) __attribute__((objc_designated_initializer));
-- (SharedCoordinate2 * _Nullable)component1 __attribute__((swift_name("component1()")));
-- (NSString *)component2 __attribute__((swift_name("component2()")));
-- (SharedWeatherModelImpl *)doCopyCoordinate:(SharedCoordinate2 * _Nullable)coordinate base:(NSString *)base __attribute__((swift_name("doCopy(coordinate:base:)")));
+__attribute__((swift_name("TodoModelImpl")))
+@interface SharedTodoModelImpl : KotlinBase <SharedTodoModel>
+- (instancetype)initWithId:(int64_t)id userId:(int64_t)userId title:(NSString *)title completed:(int64_t)completed __attribute__((swift_name("init(id:userId:title:completed:)"))) __attribute__((objc_designated_initializer));
+- (int64_t)component1 __attribute__((swift_name("component1()")));
+- (int64_t)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (int64_t)component4 __attribute__((swift_name("component4()")));
+- (SharedTodoModelImpl *)doCopyId:(int64_t)id userId:(int64_t)userId title:(NSString *)title completed:(int64_t)completed __attribute__((swift_name("doCopy(id:userId:title:completed:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *base __attribute__((swift_name("base")));
-@property (readonly) SharedCoordinate2 * _Nullable coordinate __attribute__((swift_name("coordinate")));
+@property (readonly) int64_t completed __attribute__((swift_name("completed")));
+@property (readonly) int64_t id __attribute__((swift_name("id")));
+@property (readonly) NSString *title __attribute__((swift_name("title")));
+@property (readonly) int64_t userId __attribute__((swift_name("userId")));
 @end;
 
-__attribute__((swift_name("WeatherModelQueries")))
-@protocol SharedWeatherModelQueries <SharedSqldelight_runtimeTransacter>
+__attribute__((swift_name("TodoModelQueries")))
+@protocol SharedTodoModelQueries <SharedSqldelight_runtimeTransacter>
 @required
-- (void)insertItemCoordinate:(SharedCoordinate2 * _Nullable)coordinate base:(NSString *)base __attribute__((swift_name("insertItem(coordinate:base:)")));
+- (void)insertItemId:(int64_t)id userId:(int64_t)userId title:(NSString *)title completed:(int64_t)completed __attribute__((swift_name("insertItem(id:userId:title:completed:)")));
 - (SharedSqldelight_runtimeQuery *)selectAll __attribute__((swift_name("selectAll()")));
-- (SharedSqldelight_runtimeQuery *)selectAllMapper:(id (^)(SharedCoordinate2 * _Nullable, NSString *))mapper __attribute__((swift_name("selectAll(mapper:)")));
+- (SharedSqldelight_runtimeQuery *)selectAllMapper:(id (^)(SharedLong *, SharedLong *, NSString *, SharedLong *))mapper __attribute__((swift_name("selectAll(mapper:)")));
 @end;
 
-__attribute__((swift_name("Cancelable")))
-@protocol SharedCancelable
-@required
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("TodosDatabase")))
+@interface SharedTodosDatabase : KotlinBase
+- (instancetype)initWithTodoModelQueries:(id<SharedTodoModelQueries>)todoModelQueries __attribute__((swift_name("init(todoModelQueries:)"))) __attribute__((objc_designated_initializer));
+- (id<SharedKotlinx_coroutines_coreFlow>)loadAllFlow __attribute__((swift_name("loadAllFlow()")));
+- (NSArray<SharedTodo *> *)toTodos:(NSArray<id<SharedTodoModel>> *)receiver __attribute__((swift_name("toTodos(_:)")));
+@property (readonly) SharedKotlinx_coroutines_coreMainCoroutineDispatcher *databaseDispatcher __attribute__((swift_name("databaseDispatcher")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("LoadSomethingUseCase")))
+@interface SharedLoadSomethingUseCase : KotlinBase
+- (instancetype)initWithTodosApi:(SharedTodosApi *)todosApi __attribute__((swift_name("init(todosApi:)"))) __attribute__((objc_designated_initializer));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("MainViewModel")))
+@interface SharedMainViewModel : KotlinBase
+- (instancetype)initWithNativeMainViewModel:(SharedNativeMainViewModel *)nativeMainViewModel __attribute__((swift_name("init(nativeMainViewModel:)"))) __attribute__((objc_designated_initializer));
 - (void)cancel __attribute__((swift_name("cancel()")));
+- (void)observeStateCompletion:(void (^)(id<SharedNativeMainViewModelState>))completion __attribute__((swift_name("observeState(completion:)")));
+- (void)retry __attribute__((swift_name("retry()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeMainViewModel")))
+@interface SharedNativeMainViewModel : KotlinBase
+- (instancetype)initWithTodosRepository:(SharedTodosRepository *)todosRepository __attribute__((swift_name("init(todosRepository:)"))) __attribute__((objc_designated_initializer));
+- (void)clear __attribute__((swift_name("clear()")));
+- (id<SharedKotlinx_coroutines_coreFlow>)getStateFlow __attribute__((swift_name("getStateFlow()")));
+- (void)retry __attribute__((swift_name("retry()")));
+@end;
+
+__attribute__((swift_name("NativeMainViewModelState")))
+@protocol SharedNativeMainViewModelState
+@required
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeMainViewModel.Failed")))
+@interface SharedNativeMainViewModelFailed : KotlinBase <SharedNativeMainViewModelState>
+- (instancetype)initWithErrorMessage:(NSString *)errorMessage cachedData:(NSArray<SharedTodo *> * _Nullable)cachedData __attribute__((swift_name("init(errorMessage:cachedData:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSArray<SharedTodo *> * _Nullable)component2 __attribute__((swift_name("component2()")));
+- (SharedNativeMainViewModelFailed *)doCopyErrorMessage:(NSString *)errorMessage cachedData:(NSArray<SharedTodo *> * _Nullable)cachedData __attribute__((swift_name("doCopy(errorMessage:cachedData:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSArray<SharedTodo *> * _Nullable cachedData __attribute__((swift_name("cachedData")));
+@property (readonly) NSString *errorMessage __attribute__((swift_name("errorMessage")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeMainViewModel.Loaded")))
+@interface SharedNativeMainViewModelLoaded : KotlinBase <SharedNativeMainViewModelState>
+- (instancetype)initWithData:(NSArray<SharedTodo *> *)data __attribute__((swift_name("init(data:)"))) __attribute__((objc_designated_initializer));
+- (NSArray<SharedTodo *> *)component1 __attribute__((swift_name("component1()")));
+- (SharedNativeMainViewModelLoaded *)doCopyData:(NSArray<SharedTodo *> *)data __attribute__((swift_name("doCopy(data:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSArray<SharedTodo *> *data __attribute__((swift_name("data")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeMainViewModel.Loading")))
+@interface SharedNativeMainViewModelLoading : KotlinBase <SharedNativeMainViewModelState>
+- (instancetype)initWithCachedData:(NSArray<SharedTodo *> * _Nullable)cachedData __attribute__((swift_name("init(cachedData:)"))) __attribute__((objc_designated_initializer));
+- (NSArray<SharedTodo *> * _Nullable)component1 __attribute__((swift_name("component1()")));
+- (SharedNativeMainViewModelLoading *)doCopyCachedData:(NSArray<SharedTodo *> * _Nullable)cachedData __attribute__((swift_name("doCopy(cachedData:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSArray<SharedTodo *> * _Nullable cachedData __attribute__((swift_name("cachedData")));
+@end;
+
+__attribute__((swift_name("NativeMainViewModelLoadingState")))
+@protocol SharedNativeMainViewModelLoadingState
+@required
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeMainViewModel.LoadingFailed")))
+@interface SharedNativeMainViewModelLoadingFailed : KotlinBase <SharedNativeMainViewModelLoadingState>
+- (instancetype)initWithErrorMessage:(NSString *)errorMessage __attribute__((swift_name("init(errorMessage:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (SharedNativeMainViewModelLoadingFailed *)doCopyErrorMessage:(NSString *)errorMessage __attribute__((swift_name("doCopy(errorMessage:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *errorMessage __attribute__((swift_name("errorMessage")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeMainViewModel.LoadingInProgress")))
+@interface SharedNativeMainViewModelLoadingInProgress : KotlinBase <SharedNativeMainViewModelLoadingState>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)loadingInProgress __attribute__((swift_name("init()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeMainViewModel.LoadingSucceed")))
+@interface SharedNativeMainViewModelLoadingSucceed : KotlinBase <SharedNativeMainViewModelLoadingState>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)loadingSucceed __attribute__((swift_name("init()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Todo")))
+@interface SharedTodo : KotlinBase
+- (instancetype)initWithUserId:(int64_t)userId id:(int64_t)id title:(NSString *)title completed:(BOOL)completed __attribute__((swift_name("init(userId:id:title:completed:)"))) __attribute__((objc_designated_initializer));
+- (int64_t)component1 __attribute__((swift_name("component1()")));
+- (int64_t)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (BOOL)component4 __attribute__((swift_name("component4()")));
+- (SharedTodo *)doCopyUserId:(int64_t)userId id:(int64_t)id title:(NSString *)title completed:(BOOL)completed __attribute__((swift_name("doCopy(userId:id:title:completed:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) BOOL completed __attribute__((swift_name("completed")));
+@property (readonly) int64_t id __attribute__((swift_name("id")));
+@property (readonly) NSString *title __attribute__((swift_name("title")));
+@property (readonly) int64_t userId __attribute__((swift_name("userId")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Todo.Companion")))
+@interface SharedTodoCompanion : KotlinBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<SharedKotlinx_serialization_runtimeKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("TodosApi")))
+@interface SharedTodosApi : KotlinBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("TodosRepository")))
+@interface SharedTodosRepository : KotlinBase
+- (instancetype)initWithTodosApi:(SharedTodosApi *)todosApi todosDatabase:(SharedTodosDatabase *)todosDatabase __attribute__((swift_name("init(todosApi:todosDatabase:)"))) __attribute__((objc_designated_initializer));
+@property (readonly) id<SharedKotlinx_coroutines_coreFlow> allTodos __attribute__((swift_name("allTodos")));
 @end;
 
 __attribute__((swift_name("Sqldelight_runtimeQuery")))
@@ -313,7 +422,7 @@ __attribute__((swift_name("DatabaseKt")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("FlowExtensionsKt")))
 @interface SharedFlowExtensionsKt : KotlinBase
-+ (id<SharedKotlinx_coroutines_coreFlow>)mapToList:(id<SharedKotlinx_coroutines_coreFlow>)receiver context:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("mapToList(_:context:)")));
++ (id<SharedKotlinx_coroutines_coreFlow>)mapToList:(id<SharedKotlinx_coroutines_coreFlow>)receiver __attribute__((swift_name("mapToList(_:)")));
 + (id<SharedKotlinx_coroutines_coreFlow>)mapToOne:(id<SharedKotlinx_coroutines_coreFlow>)receiver context:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("mapToOne(_:context:)")));
 + (id<SharedKotlinx_coroutines_coreFlow>)mapToOneNotNull:(id<SharedKotlinx_coroutines_coreFlow>)receiver context:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("mapToOneNotNull(_:context:)")));
 + (id<SharedKotlinx_coroutines_coreFlow>)mapToOneOrDefault:(id<SharedKotlinx_coroutines_coreFlow>)receiver defaultValue:(id)defaultValue context:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("mapToOneOrDefault(_:defaultValue:context:)")));
@@ -321,18 +430,15 @@ __attribute__((swift_name("FlowExtensionsKt")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("CommonKt")))
-@interface SharedCommonKt : KotlinBase
-+ (void)insert __attribute__((swift_name("insert()")));
-+ (id<SharedCancelable>)testHelloCallback:(void (^)(NSString *))callback __attribute__((swift_name("testHello(callback:)")));
-@property (class) int32_t i __attribute__((swift_name("i")));
-@property (class, readonly) id<SharedWeatherModelQueries> weatherModelQueries __attribute__((swift_name("weatherModelQueries")));
+__attribute__((swift_name("CreateHttpClientKt")))
+@interface SharedCreateHttpClientKt : KotlinBase
++ (SharedKtor_client_coreHttpClient *)createHttpClient __attribute__((swift_name("createHttpClient()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("ActualKt")))
-@interface SharedActualKt : KotlinBase
-+ (void)testHello2Callback:(void (^)(NSString *))callback __attribute__((swift_name("testHello2(callback:)")));
+__attribute__((swift_name("ExtensionsKt")))
+@interface SharedExtensionsKt : KotlinBase
++ (void)toCompletion:(id<SharedKotlinx_coroutines_coreFlow>)receiver coroutineScope:(id<SharedKotlinx_coroutines_coreCoroutineScope>)coroutineScope completion:(void (^)(id _Nullable))completion __attribute__((swift_name("toCompletion(_:coroutineScope:completion:)")));
 @end;
 
 __attribute__((swift_name("Kotlinx_serialization_runtimeSerializationStrategy")))
@@ -390,11 +496,53 @@ __attribute__((swift_name("Sqldelight_runtimeSqlDriverSchema")))
 @property (readonly) int32_t version __attribute__((swift_name("version")));
 @end;
 
-__attribute__((swift_name("Sqldelight_runtimeColumnAdapter")))
-@protocol SharedSqldelight_runtimeColumnAdapter
+__attribute__((swift_name("KotlinCoroutineContext")))
+@protocol SharedKotlinCoroutineContext
 @required
-- (id)decodeDatabaseValue:(id _Nullable)databaseValue __attribute__((swift_name("decode(databaseValue:)")));
-- (id _Nullable)encodeValue:(id)value __attribute__((swift_name("encode(value:)")));
+- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<SharedKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
+- (id<SharedKotlinCoroutineContextElement> _Nullable)getKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
+- (id<SharedKotlinCoroutineContext>)minusKeyKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
+- (id<SharedKotlinCoroutineContext>)plusContext:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
+@end;
+
+__attribute__((swift_name("KotlinCoroutineContextElement")))
+@protocol SharedKotlinCoroutineContextElement <SharedKotlinCoroutineContext>
+@required
+@property (readonly) id<SharedKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
+@end;
+
+__attribute__((swift_name("KotlinAbstractCoroutineContextElement")))
+@interface SharedKotlinAbstractCoroutineContextElement : KotlinBase <SharedKotlinCoroutineContextElement>
+- (instancetype)initWithKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("init(key:)"))) __attribute__((objc_designated_initializer));
+@property (readonly) id<SharedKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
+@end;
+
+__attribute__((swift_name("KotlinContinuationInterceptor")))
+@protocol SharedKotlinContinuationInterceptor <SharedKotlinCoroutineContextElement>
+@required
+- (id<SharedKotlinContinuation>)interceptContinuationContinuation:(id<SharedKotlinContinuation>)continuation __attribute__((swift_name("interceptContinuation(continuation:)")));
+- (void)releaseInterceptedContinuationContinuation:(id<SharedKotlinContinuation>)continuation __attribute__((swift_name("releaseInterceptedContinuation(continuation:)")));
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineDispatcher")))
+@interface SharedKotlinx_coroutines_coreCoroutineDispatcher : SharedKotlinAbstractCoroutineContextElement <SharedKotlinContinuationInterceptor>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("init(key:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (void)dispatchContext:(id<SharedKotlinCoroutineContext>)context block:(id<SharedKotlinx_coroutines_coreRunnable>)block __attribute__((swift_name("dispatch(context:block:)")));
+- (void)dispatchYieldContext:(id<SharedKotlinCoroutineContext>)context block:(id<SharedKotlinx_coroutines_coreRunnable>)block __attribute__((swift_name("dispatchYield(context:block:)")));
+- (id<SharedKotlinContinuation>)interceptContinuationContinuation:(id<SharedKotlinContinuation>)continuation __attribute__((swift_name("interceptContinuation(continuation:)")));
+- (BOOL)isDispatchNeededContext:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("isDispatchNeeded(context:)")));
+- (SharedKotlinx_coroutines_coreCoroutineDispatcher *)plusOther:(SharedKotlinx_coroutines_coreCoroutineDispatcher *)other __attribute__((swift_name("plus(other:)"))) __attribute__((unavailable("Operator '+' on two CoroutineDispatcher objects is meaningless. CoroutineDispatcher is a coroutine context element and `+` is a set-sum operator for coroutine contexts. The dispatcher to the right of `+` just replaces the dispatcher to the left.")));
+- (void)releaseInterceptedContinuationContinuation:(id<SharedKotlinContinuation>)continuation __attribute__((swift_name("releaseInterceptedContinuation(continuation:)")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreMainCoroutineDispatcher")))
+@interface SharedKotlinx_coroutines_coreMainCoroutineDispatcher : SharedKotlinx_coroutines_coreCoroutineDispatcher
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property (readonly) SharedKotlinx_coroutines_coreMainCoroutineDispatcher *immediate __attribute__((swift_name("immediate")));
 @end;
 
 __attribute__((swift_name("Sqldelight_runtimeSqlCursor")))
@@ -413,18 +561,33 @@ __attribute__((swift_name("Sqldelight_runtimeQueryListener")))
 - (void)queryResultsChanged __attribute__((swift_name("queryResultsChanged()")));
 @end;
 
-__attribute__((swift_name("Kotlinx_coroutines_coreFlow")))
-@protocol SharedKotlinx_coroutines_coreFlow
+__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
+@protocol SharedKotlinx_coroutines_coreCoroutineScope
 @required
+@property (readonly) id<SharedKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
 @end;
 
-__attribute__((swift_name("KotlinCoroutineContext")))
-@protocol SharedKotlinCoroutineContext
+__attribute__((swift_name("Ktor_ioCloseable")))
+@protocol SharedKtor_ioCloseable
 @required
-- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<SharedKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
-- (id<SharedKotlinCoroutineContextElement> _Nullable)getKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
-- (id<SharedKotlinCoroutineContext>)minusKeyKey:(id<SharedKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
-- (id<SharedKotlinCoroutineContext>)plusContext:(id<SharedKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
+- (void)close __attribute__((swift_name("close()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpClient")))
+@interface SharedKtor_client_coreHttpClient : KotlinBase <SharedKotlinx_coroutines_coreCoroutineScope, SharedKtor_ioCloseable>
+- (instancetype)initWithEngine:(id<SharedKtor_client_coreHttpClientEngine>)engine userConfig:(SharedKtor_client_coreHttpClientConfig *)userConfig __attribute__((swift_name("init(engine:userConfig:)"))) __attribute__((objc_designated_initializer));
+- (void)close __attribute__((swift_name("close()")));
+- (SharedKtor_client_coreHttpClient *)configBlock:(void (^)(SharedKtor_client_coreHttpClientConfig *))block __attribute__((swift_name("config(block:)")));
+@property (readonly) id<SharedKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
+@property (readonly) id<SharedKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
+@property (readonly) SharedKotlinx_coroutines_coreCoroutineDispatcher *dispatcher __attribute__((swift_name("dispatcher"))) __attribute__((unavailable("[dispatcher] is deprecated. Use coroutineContext instead.")));
+@property (readonly) id<SharedKtor_client_coreHttpClientEngine> engine __attribute__((swift_name("engine")));
+@property (readonly) SharedKtor_client_coreHttpClientEngineConfig *engineConfig __attribute__((swift_name("engineConfig")));
+@property (readonly) SharedKtor_client_coreHttpReceivePipeline *receivePipeline __attribute__((swift_name("receivePipeline")));
+@property (readonly) SharedKtor_client_coreHttpRequestPipeline *requestPipeline __attribute__((swift_name("requestPipeline")));
+@property (readonly) SharedKtor_client_coreHttpResponsePipeline *responsePipeline __attribute__((swift_name("responsePipeline")));
+@property (readonly) SharedKtor_client_coreHttpSendPipeline *sendPipeline __attribute__((swift_name("sendPipeline")));
 @end;
 
 __attribute__((swift_name("Kotlinx_serialization_runtimeEncoder")))
@@ -499,6 +662,24 @@ __attribute__((swift_name("Sqldelight_runtimeSqlPreparedStatement")))
 - (void)bindStringIndex:(int32_t)index value:(NSString * _Nullable)value __attribute__((swift_name("bindString(index:value:)")));
 @end;
 
+__attribute__((swift_name("KotlinCoroutineContextKey")))
+@protocol SharedKotlinCoroutineContextKey
+@required
+@end;
+
+__attribute__((swift_name("KotlinContinuation")))
+@protocol SharedKotlinContinuation
+@required
+- (void)resumeWithResult:(id _Nullable)result __attribute__((swift_name("resumeWith(result:)")));
+@property (readonly) id<SharedKotlinCoroutineContext> context __attribute__((swift_name("context")));
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreRunnable")))
+@protocol SharedKotlinx_coroutines_coreRunnable
+@required
+- (void)run __attribute__((swift_name("run()")));
+@end;
+
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinByteArray")))
 @interface SharedKotlinByteArray : KotlinBase
@@ -512,15 +693,103 @@ __attribute__((swift_name("KotlinByteArray")))
 @property (readonly) int32_t size __attribute__((swift_name("size")));
 @end;
 
-__attribute__((swift_name("KotlinCoroutineContextElement")))
-@protocol SharedKotlinCoroutineContextElement <SharedKotlinCoroutineContext>
+__attribute__((swift_name("Ktor_client_coreHttpClientEngine")))
+@protocol SharedKtor_client_coreHttpClientEngine <SharedKotlinx_coroutines_coreCoroutineScope, SharedKtor_ioCloseable>
 @required
-@property (readonly) id<SharedKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
+- (void)installClient:(SharedKtor_client_coreHttpClient *)client __attribute__((swift_name("install(client:)")));
+@property (readonly) SharedKtor_client_coreHttpClientEngineConfig *config __attribute__((swift_name("config")));
+@property (readonly) SharedKotlinx_coroutines_coreCoroutineDispatcher *dispatcher __attribute__((swift_name("dispatcher")));
 @end;
 
-__attribute__((swift_name("KotlinCoroutineContextKey")))
-@protocol SharedKotlinCoroutineContextKey
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpClientConfig")))
+@interface SharedKtor_client_coreHttpClientConfig : KotlinBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (SharedKtor_client_coreHttpClientConfig *)clone __attribute__((swift_name("clone()")));
+- (void)engineBlock:(void (^)(SharedKtor_client_coreHttpClientEngineConfig *))block __attribute__((swift_name("engine(block:)")));
+- (void)installClient:(SharedKtor_client_coreHttpClient *)client __attribute__((swift_name("install(client:)")));
+- (void)installFeature:(id<SharedKtor_client_coreHttpClientFeature>)feature configure:(void (^)(id))configure __attribute__((swift_name("install(feature:configure:)")));
+- (void)installKey:(NSString *)key block:(void (^)(SharedKtor_client_coreHttpClient *))block __attribute__((swift_name("install(key:block:)")));
+- (void)plusAssignOther:(SharedKtor_client_coreHttpClientConfig *)other __attribute__((swift_name("plusAssign(other:)")));
+@property BOOL expectSuccess __attribute__((swift_name("expectSuccess")));
+@property BOOL followRedirects __attribute__((swift_name("followRedirects")));
+@property BOOL useDefaultTransformers __attribute__((swift_name("useDefaultTransformers")));
+@end;
+
+__attribute__((swift_name("Ktor_utilsAttributes")))
+@protocol SharedKtor_utilsAttributes
 @required
+- (id)computeIfAbsentKey:(SharedKtor_utilsAttributeKey *)key block:(id (^)(void))block __attribute__((swift_name("computeIfAbsent(key:block:)")));
+- (BOOL)containsKey:(SharedKtor_utilsAttributeKey *)key __attribute__((swift_name("contains(key:)")));
+- (id)getKey_:(SharedKtor_utilsAttributeKey *)key __attribute__((swift_name("get(key_:)")));
+- (id _Nullable)getOrNullKey:(SharedKtor_utilsAttributeKey *)key __attribute__((swift_name("getOrNull(key:)")));
+- (void)putKey:(SharedKtor_utilsAttributeKey *)key value:(id)value __attribute__((swift_name("put(key:value:)")));
+- (void)removeKey:(SharedKtor_utilsAttributeKey *)key __attribute__((swift_name("remove(key:)")));
+- (id)takeKey:(SharedKtor_utilsAttributeKey *)key __attribute__((swift_name("take(key:)")));
+- (id _Nullable)takeOrNullKey:(SharedKtor_utilsAttributeKey *)key __attribute__((swift_name("takeOrNull(key:)")));
+@property (readonly) NSArray<SharedKtor_utilsAttributeKey *> *allKeys __attribute__((swift_name("allKeys")));
+@end;
+
+__attribute__((swift_name("Ktor_client_coreHttpClientEngineConfig")))
+@interface SharedKtor_client_coreHttpClientEngineConfig : KotlinBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property BOOL pipelining __attribute__((swift_name("pipelining")));
+@property SharedKtor_client_coreProxyConfig * _Nullable proxy __attribute__((swift_name("proxy")));
+@property (readonly) SharedKotlinNothing *response __attribute__((swift_name("response"))) __attribute__((unavailable("Response config is deprecated. See [HttpPlainText] feature for charset configuration")));
+@property int32_t threadsCount __attribute__((swift_name("threadsCount")));
+@end;
+
+__attribute__((swift_name("Ktor_utilsPipeline")))
+@interface SharedKtor_utilsPipeline : KotlinBase
+- (instancetype)initWithPhase:(SharedKtor_utilsPipelinePhase *)phase interceptors:(NSArray<id<SharedKotlinSuspendFunction2>> *)interceptors __attribute__((swift_name("init(phase:interceptors:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithPhases:(SharedKotlinArray *)phases __attribute__((swift_name("init(phases:)"))) __attribute__((objc_designated_initializer));
+- (void)addPhasePhase:(SharedKtor_utilsPipelinePhase *)phase __attribute__((swift_name("addPhase(phase:)")));
+- (void)afterIntercepted __attribute__((swift_name("afterIntercepted()")));
+- (void)insertPhaseAfterReference:(SharedKtor_utilsPipelinePhase *)reference phase:(SharedKtor_utilsPipelinePhase *)phase __attribute__((swift_name("insertPhaseAfter(reference:phase:)")));
+- (void)insertPhaseBeforeReference:(SharedKtor_utilsPipelinePhase *)reference phase:(SharedKtor_utilsPipelinePhase *)phase __attribute__((swift_name("insertPhaseBefore(reference:phase:)")));
+- (void)interceptPhase:(SharedKtor_utilsPipelinePhase *)phase block:(id<SharedKotlinSuspendFunction2>)block __attribute__((swift_name("intercept(phase:block:)")));
+- (void)mergeFrom:(SharedKtor_utilsPipeline *)from __attribute__((swift_name("merge(from:)")));
+@property (readonly) id<SharedKtor_utilsAttributes> attributes __attribute__((swift_name("attributes")));
+@property (readonly) BOOL isEmpty __attribute__((swift_name("isEmpty")));
+@property (readonly) NSArray<SharedKtor_utilsPipelinePhase *> *items __attribute__((swift_name("items")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpReceivePipeline")))
+@interface SharedKtor_client_coreHttpReceivePipeline : SharedKtor_utilsPipeline
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithPhase:(SharedKtor_utilsPipelinePhase *)phase interceptors:(NSArray<id<SharedKotlinSuspendFunction2>> *)interceptors __attribute__((swift_name("init(phase:interceptors:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithPhases:(SharedKotlinArray *)phases __attribute__((swift_name("init(phases:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpRequestPipeline")))
+@interface SharedKtor_client_coreHttpRequestPipeline : SharedKtor_utilsPipeline
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithPhase:(SharedKtor_utilsPipelinePhase *)phase interceptors:(NSArray<id<SharedKotlinSuspendFunction2>> *)interceptors __attribute__((swift_name("init(phase:interceptors:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithPhases:(SharedKotlinArray *)phases __attribute__((swift_name("init(phases:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpResponsePipeline")))
+@interface SharedKtor_client_coreHttpResponsePipeline : SharedKtor_utilsPipeline
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithPhase:(SharedKtor_utilsPipelinePhase *)phase interceptors:(NSArray<id<SharedKotlinSuspendFunction2>> *)interceptors __attribute__((swift_name("init(phase:interceptors:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithPhases:(SharedKotlinArray *)phases __attribute__((swift_name("init(phases:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreHttpSendPipeline")))
+@interface SharedKtor_client_coreHttpSendPipeline : SharedKtor_utilsPipeline
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithPhase:(SharedKtor_utilsPipelinePhase *)phase interceptors:(NSArray<id<SharedKotlinSuspendFunction2>> *)interceptors __attribute__((swift_name("init(phase:interceptors:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
+- (instancetype)initWithPhases:(SharedKotlinArray *)phases __attribute__((swift_name("init(phases:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @end;
 
 __attribute__((swift_name("Kotlinx_serialization_runtimeCompositeEncoder")))
@@ -648,6 +917,48 @@ __attribute__((swift_name("KotlinByteIterator")))
 - (int8_t)nextByte __attribute__((swift_name("nextByte()")));
 @end;
 
+__attribute__((swift_name("Ktor_client_coreHttpClientFeature")))
+@protocol SharedKtor_client_coreHttpClientFeature
+@required
+- (void)installFeature:(id)feature scope:(SharedKtor_client_coreHttpClient *)scope __attribute__((swift_name("install(feature:scope:)")));
+- (id)prepareBlock:(void (^)(id))block __attribute__((swift_name("prepare(block:)")));
+@property (readonly) SharedKtor_utilsAttributeKey *key __attribute__((swift_name("key")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsAttributeKey")))
+@interface SharedKtor_utilsAttributeKey : KotlinBase
+- (instancetype)initWithName:(NSString *)name __attribute__((swift_name("init(name:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_client_coreProxyConfig")))
+@interface SharedKtor_client_coreProxyConfig : KotlinBase
+- (instancetype)initWithUrl:(SharedKtor_httpUrl *)url __attribute__((swift_name("init(url:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) SharedKtor_httpUrl *url __attribute__((swift_name("url")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_utilsPipelinePhase")))
+@interface SharedKtor_utilsPipelinePhase : KotlinBase
+- (instancetype)initWithName:(NSString *)name __attribute__((swift_name("init(name:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end;
+
+__attribute__((swift_name("KotlinFunction")))
+@protocol SharedKotlinFunction
+@required
+@end;
+
+__attribute__((swift_name("KotlinSuspendFunction2")))
+@protocol SharedKotlinSuspendFunction2 <SharedKotlinFunction>
+@required
+@end;
+
 __attribute__((swift_name("Kotlinx_serialization_runtimeSerialModuleCollector")))
 @protocol SharedKotlinx_serialization_runtimeSerialModuleCollector
 @required
@@ -676,6 +987,75 @@ __attribute__((swift_name("KotlinKClass")))
 - (BOOL)isInstanceValue:(id _Nullable)value __attribute__((swift_name("isInstance(value:)")));
 @property (readonly) NSString * _Nullable qualifiedName __attribute__((swift_name("qualifiedName")));
 @property (readonly) NSString * _Nullable simpleName __attribute__((swift_name("simpleName")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpUrl")))
+@interface SharedKtor_httpUrl : KotlinBase
+- (instancetype)initWithProtocol:(SharedKtor_httpURLProtocol *)protocol host:(NSString *)host specifiedPort:(int32_t)specifiedPort encodedPath:(NSString *)encodedPath parameters:(id<SharedKtor_httpParameters>)parameters fragment:(NSString *)fragment user:(NSString * _Nullable)user password:(NSString * _Nullable)password trailingQuery:(BOOL)trailingQuery __attribute__((swift_name("init(protocol:host:specifiedPort:encodedPath:parameters:fragment:user:password:trailingQuery:)"))) __attribute__((objc_designated_initializer));
+- (SharedKtor_httpURLProtocol *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (int32_t)component3 __attribute__((swift_name("component3()")));
+- (NSString *)component4 __attribute__((swift_name("component4()")));
+- (id<SharedKtor_httpParameters>)component5 __attribute__((swift_name("component5()")));
+- (NSString *)component6 __attribute__((swift_name("component6()")));
+- (NSString * _Nullable)component7 __attribute__((swift_name("component7()")));
+- (NSString * _Nullable)component8 __attribute__((swift_name("component8()")));
+- (BOOL)component9 __attribute__((swift_name("component9()")));
+- (SharedKtor_httpUrl *)doCopyProtocol:(SharedKtor_httpURLProtocol *)protocol host:(NSString *)host specifiedPort:(int32_t)specifiedPort encodedPath:(NSString *)encodedPath parameters:(id<SharedKtor_httpParameters>)parameters fragment:(NSString *)fragment user:(NSString * _Nullable)user password:(NSString * _Nullable)password trailingQuery:(BOOL)trailingQuery __attribute__((swift_name("doCopy(protocol:host:specifiedPort:encodedPath:parameters:fragment:user:password:trailingQuery:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *encodedPath __attribute__((swift_name("encodedPath")));
+@property (readonly) NSString *fragment __attribute__((swift_name("fragment")));
+@property (readonly) NSString *host __attribute__((swift_name("host")));
+@property (readonly) id<SharedKtor_httpParameters> parameters __attribute__((swift_name("parameters")));
+@property (readonly) NSString * _Nullable password __attribute__((swift_name("password")));
+@property (readonly) int32_t port __attribute__((swift_name("port")));
+@property (readonly) SharedKtor_httpURLProtocol *protocol __attribute__((swift_name("protocol")));
+@property (readonly) int32_t specifiedPort __attribute__((swift_name("specifiedPort")));
+@property (readonly) BOOL trailingQuery __attribute__((swift_name("trailingQuery")));
+@property (readonly) NSString * _Nullable user __attribute__((swift_name("user")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Ktor_httpURLProtocol")))
+@interface SharedKtor_httpURLProtocol : KotlinBase
+- (instancetype)initWithName:(NSString *)name defaultPort:(int32_t)defaultPort __attribute__((swift_name("init(name:defaultPort:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (int32_t)component2 __attribute__((swift_name("component2()")));
+- (SharedKtor_httpURLProtocol *)doCopyName:(NSString *)name defaultPort:(int32_t)defaultPort __attribute__((swift_name("doCopy(name:defaultPort:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) int32_t defaultPort __attribute__((swift_name("defaultPort")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
+@end;
+
+__attribute__((swift_name("Ktor_utilsStringValues")))
+@protocol SharedKtor_utilsStringValues
+@required
+- (BOOL)containsName:(NSString *)name __attribute__((swift_name("contains(name:)")));
+- (BOOL)containsName:(NSString *)name value:(NSString *)value __attribute__((swift_name("contains(name:value:)")));
+- (NSSet<id<SharedKotlinMapEntry>> *)entries __attribute__((swift_name("entries()")));
+- (void)forEachBody:(void (^)(NSString *, NSArray<NSString *> *))body __attribute__((swift_name("forEach(body:)")));
+- (NSString * _Nullable)getName:(NSString *)name __attribute__((swift_name("get(name:)")));
+- (NSArray<NSString *> * _Nullable)getAllName:(NSString *)name __attribute__((swift_name("getAll(name:)")));
+- (BOOL)isEmpty_ __attribute__((swift_name("isEmpty()")));
+- (NSSet<NSString *> *)names __attribute__((swift_name("names()")));
+@property (readonly) BOOL caseInsensitiveName __attribute__((swift_name("caseInsensitiveName")));
+@end;
+
+__attribute__((swift_name("Ktor_httpParameters")))
+@protocol SharedKtor_httpParameters <SharedKtor_utilsStringValues>
+@required
+@end;
+
+__attribute__((swift_name("KotlinMapEntry")))
+@protocol SharedKotlinMapEntry
+@required
+@property (readonly) id _Nullable key __attribute__((swift_name("key")));
+@property (readonly) id _Nullable value __attribute__((swift_name("value")));
 @end;
 
 #pragma clang diagnostic pop

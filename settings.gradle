@@ -1,3 +1,4 @@
 include ':app'
 include ':shared'
-rootProject.name='RadeksMultiplatform'
+//rootProject.name='RadeksMultiplatform'
+enableFeaturePreview('GRADLE_METADATA')
