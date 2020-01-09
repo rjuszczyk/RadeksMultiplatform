@@ -1,3 +1,5 @@
+#RadeksMultiplatform
+
 This is a starting project for writing apps with kotlin-multiplatform for android/ios.
 It utilizes libraries for:
 - networking
@@ -20,3 +22,5 @@ https://stackoverflow.com/questions/59370764/withtimeout-function-gives-illegals
 
 Useage of firebase-firestore for kotlin mutliplatform from:
 https://github.com/touchlab/FirestoreKMP
+
+![Multiplatform Architecture](multiplatform-arch.png)
