@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedTestGetResponse, SharedSqldelight_runtimeTransacterTransaction, SharedTodoModelImpl, SharedSqldelight_runtimeQuery, SharedTodo, SharedKotlinx_coroutines_coreMainCoroutineDispatcher, SharedTodosApi, SharedNativeMainViewModel, SharedTodosRepository, SharedNativeMainViewModelFailed, SharedNativeMainViewModelLoaded, SharedNativeMainViewModelLoading, SharedNativeMainViewModelLoadingFailed, SharedTodosDatabase, SharedKtor_client_coreHttpClient, SharedKotlinAbstractCoroutineContextElement, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinByteArray, SharedKtor_client_coreHttpClientConfig, SharedKtor_client_coreHttpClientEngineConfig, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKotlinArray, SharedKotlinx_serialization_runtimeSerialKind, SharedKotlinNothing, SharedKotlinx_serialization_runtimeUpdateMode, SharedKotlinByteIterator, SharedKtor_utilsAttributeKey, SharedKtor_client_coreProxyConfig, SharedKtor_utilsPipelinePhase, SharedKtor_utilsPipeline, SharedKotlinEnum, SharedKtor_httpUrl, SharedKtor_httpURLProtocol;
+@class SharedTestGetResponse, SharedSqldelight_runtimeTransacterTransaction, SharedNativeFirebaseTestViewModel, SharedTodoModelImpl, SharedSqldelight_runtimeQuery, SharedTodo, SharedKotlinx_coroutines_coreMainCoroutineDispatcher, SharedNativeMainViewModel, SharedFirebaseTestRepository, SharedNativeFirebaseTestViewModelLoaded, SharedTodosRepository, SharedNativeMainViewModelFailed, SharedNativeMainViewModelLoaded, SharedNativeMainViewModelLoading, SharedNativeMainViewModelLoadingFailed, SharedTodosApi, SharedTodosDatabase, SharedKtor_client_coreHttpClient, SharedKotlinAbstractCoroutineContextElement, SharedKotlinx_coroutines_coreCoroutineDispatcher, SharedKotlinByteArray, SharedKtor_client_coreHttpClientConfig, SharedKtor_client_coreHttpClientEngineConfig, SharedKtor_client_coreHttpReceivePipeline, SharedKtor_client_coreHttpRequestPipeline, SharedKtor_client_coreHttpResponsePipeline, SharedKtor_client_coreHttpSendPipeline, SharedKotlinArray, SharedKotlinx_serialization_runtimeSerialKind, SharedKotlinNothing, SharedKotlinx_serialization_runtimeUpdateMode, SharedKotlinByteIterator, SharedKtor_utilsAttributeKey, SharedKtor_client_coreProxyConfig, SharedKtor_utilsPipelinePhase, SharedKtor_utilsPipeline, SharedKotlinEnum, SharedKtor_httpUrl, SharedKtor_httpURLProtocol;
 
-@protocol SharedKotlinx_serialization_runtimeKSerializer, SharedTodoModelQueries, SharedSqldelight_runtimeTransacter, SharedAnyNameDatabase, SharedSqldelight_runtimeSqlDriver, SharedSqldelight_runtimeSqlDriverSchema, SharedKotlinx_coroutines_coreFlow, SharedTodoModel, SharedNativeMainViewModelState, SharedNativeMainViewModelLoadingState, SharedSqldelight_runtimeSqlCursor, SharedSqldelight_runtimeQueryListener, SharedKotlinCoroutineContext, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_serialization_runtimeEncoder, SharedKotlinx_serialization_runtimeSerialDescriptor, SharedKotlinx_serialization_runtimeSerializationStrategy, SharedKotlinx_serialization_runtimeDecoder, SharedKotlinx_serialization_runtimeDeserializationStrategy, SharedSqldelight_runtimeSqlPreparedStatement, SharedSqldelight_runtimeCloseable, SharedKotlinCoroutineContextKey, SharedKotlinCoroutineContextElement, SharedKotlinContinuation, SharedKotlinContinuationInterceptor, SharedKotlinx_coroutines_coreRunnable, SharedKtor_ioCloseable, SharedKtor_client_coreHttpClientEngine, SharedKtor_utilsAttributes, SharedKotlinx_serialization_runtimeCompositeEncoder, SharedKotlinx_serialization_runtimeSerialModule, SharedKotlinAnnotation, SharedKotlinx_serialization_runtimeCompositeDecoder, SharedKtor_client_coreHttpClientFeature, SharedKotlinSuspendFunction2, SharedKotlinIterator, SharedKotlinx_serialization_runtimeSerialModuleCollector, SharedKotlinKClass, SharedKotlinComparable, SharedKotlinFunction, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKtor_httpParameters, SharedKotlinMapEntry, SharedKtor_utilsStringValues;
+@protocol SharedKotlinx_serialization_runtimeKSerializer, SharedTodoModelQueries, SharedSqldelight_runtimeTransacter, SharedAnyNameDatabase, SharedSqldelight_runtimeSqlDriver, SharedSqldelight_runtimeSqlDriverSchema, SharedNativeFirebaseTestViewModelState, SharedKotlinx_coroutines_coreFlow, SharedTodoModel, SharedNativeMainViewModelState, SharedNativeMainViewModelLoadingState, SharedSqldelight_runtimeSqlCursor, SharedSqldelight_runtimeQueryListener, SharedKotlinCoroutineContext, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_serialization_runtimeEncoder, SharedKotlinx_serialization_runtimeSerialDescriptor, SharedKotlinx_serialization_runtimeSerializationStrategy, SharedKotlinx_serialization_runtimeDecoder, SharedKotlinx_serialization_runtimeDeserializationStrategy, SharedSqldelight_runtimeSqlPreparedStatement, SharedSqldelight_runtimeCloseable, SharedKotlinCoroutineContextKey, SharedKotlinCoroutineContextElement, SharedKotlinContinuation, SharedKotlinContinuationInterceptor, SharedKotlinx_coroutines_coreRunnable, SharedKtor_ioCloseable, SharedKtor_client_coreHttpClientEngine, SharedKtor_utilsAttributes, SharedKotlinx_serialization_runtimeCompositeEncoder, SharedKotlinx_serialization_runtimeSerialModule, SharedKotlinAnnotation, SharedKotlinx_serialization_runtimeCompositeDecoder, SharedKtor_client_coreHttpClientFeature, SharedKotlinSuspendFunction2, SharedKotlinIterator, SharedKotlinx_serialization_runtimeSerialModuleCollector, SharedKotlinKClass, SharedKotlinComparable, SharedKotlinFunction, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKtor_httpParameters, SharedKotlinMapEntry, SharedKtor_utilsStringValues;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -193,6 +193,15 @@ __attribute__((swift_name("AnyNameDatabaseCompanion")))
 @property (readonly) id<SharedSqldelight_runtimeSqlDriverSchema> Schema __attribute__((swift_name("Schema")));
 @end;
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("FirebaseTestViewModel")))
+@interface SharedFirebaseTestViewModel : KotlinBase
+- (instancetype)initWithNativeFirebaseTestViewModel:(SharedNativeFirebaseTestViewModel *)nativeFirebaseTestViewModel __attribute__((swift_name("init(nativeFirebaseTestViewModel:)"))) __attribute__((objc_designated_initializer));
+- (void)cancel __attribute__((swift_name("cancel()")));
+- (void)observeStateCompletion:(void (^)(id<SharedNativeFirebaseTestViewModelState>))completion __attribute__((swift_name("observeState(completion:)")));
+- (void)sendItem:(NSString *)item __attribute__((swift_name("send(item:)")));
+@end;
+
 __attribute__((swift_name("Kotlinx_coroutines_coreFlow")))
 @protocol SharedKotlinx_coroutines_coreFlow
 @required
@@ -235,6 +244,7 @@ __attribute__((swift_name("TodoModelImpl")))
 __attribute__((swift_name("TodoModelQueries")))
 @protocol SharedTodoModelQueries <SharedSqldelight_runtimeTransacter>
 @required
+- (void)clearItems __attribute__((swift_name("clearItems()")));
 - (void)insertItemId:(int64_t)id userId:(int64_t)userId title:(NSString *)title completed:(int64_t)completed __attribute__((swift_name("insertItem(id:userId:title:completed:)")));
 - (SharedSqldelight_runtimeQuery *)selectAll __attribute__((swift_name("selectAll()")));
 - (SharedSqldelight_runtimeQuery *)selectAllMapper:(id (^)(SharedLong *, SharedLong *, NSString *, SharedLong *))mapper __attribute__((swift_name("selectAll(mapper:)")));
@@ -250,18 +260,46 @@ __attribute__((swift_name("TodosDatabase")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("LoadSomethingUseCase")))
-@interface SharedLoadSomethingUseCase : KotlinBase
-- (instancetype)initWithTodosApi:(SharedTodosApi *)todosApi __attribute__((swift_name("init(todosApi:)"))) __attribute__((objc_designated_initializer));
-@end;
-
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("MainViewModel")))
 @interface SharedMainViewModel : KotlinBase
 - (instancetype)initWithNativeMainViewModel:(SharedNativeMainViewModel *)nativeMainViewModel __attribute__((swift_name("init(nativeMainViewModel:)"))) __attribute__((objc_designated_initializer));
 - (void)cancel __attribute__((swift_name("cancel()")));
 - (void)observeStateCompletion:(void (^)(id<SharedNativeMainViewModelState>))completion __attribute__((swift_name("observeState(completion:)")));
 - (void)retry __attribute__((swift_name("retry()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeFirebaseTestViewModel")))
+@interface SharedNativeFirebaseTestViewModel : KotlinBase
+- (instancetype)initWithFirebaseTestRepository:(SharedFirebaseTestRepository *)firebaseTestRepository __attribute__((swift_name("init(firebaseTestRepository:)"))) __attribute__((objc_designated_initializer));
+- (void)clear __attribute__((swift_name("clear()")));
+- (void)sendItem:(NSString *)item __attribute__((swift_name("send(item:)")));
+@property (readonly) id<SharedKotlinx_coroutines_coreFlow> state __attribute__((swift_name("state")));
+@end;
+
+__attribute__((swift_name("NativeFirebaseTestViewModelState")))
+@protocol SharedNativeFirebaseTestViewModelState
+@required
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeFirebaseTestViewModel.Loaded")))
+@interface SharedNativeFirebaseTestViewModelLoaded : KotlinBase <SharedNativeFirebaseTestViewModelState>
+- (instancetype)initWithItems:(NSArray<NSString *> *)items __attribute__((swift_name("init(items:)"))) __attribute__((objc_designated_initializer));
+- (NSArray<NSString *> *)component1 __attribute__((swift_name("component1()")));
+- (SharedNativeFirebaseTestViewModelLoaded *)doCopyItems:(NSArray<NSString *> *)items __attribute__((swift_name("doCopy(items:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSArray<NSString *> *items __attribute__((swift_name("items")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NativeFirebaseTestViewModel.Loading")))
+@interface SharedNativeFirebaseTestViewModelLoading : KotlinBase <SharedNativeFirebaseTestViewModelState>
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)loading __attribute__((swift_name("init()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -381,6 +419,14 @@ __attribute__((swift_name("TodosApi")))
 @interface SharedTodosApi : KotlinBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("FirebaseTestRepository")))
+@interface SharedFirebaseTestRepository : KotlinBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property (readonly) id<SharedKotlinx_coroutines_coreFlow> allItems __attribute__((swift_name("allItems")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

@@ -15,15 +15,18 @@ class TodosDatabase(
 ) {
     val databaseDispatcher = Dispatchers.Main
 
-    suspend fun insertTodos(todos: List<Todo>) {
+    suspend fun updateTodos(todos: List<Todo>) {
         withContext(databaseDispatcher) {
-            todos.forEach { todo ->
-                todoModelQueries.insertItem(
-                    todo.id,
-                    todo.userId,
-                    todo.title,
-                    if(todo.completed) 1 else 0
-                )
+            todoModelQueries.transaction {
+                todoModelQueries.clearItems()
+                todos.forEach { todo ->
+                    todoModelQueries.insertItem(
+                        todo.id,
+                        todo.userId,
+                        todo.title,
+                        if(todo.completed) 1 else 0
+                    )
+                }
             }
         }
     }

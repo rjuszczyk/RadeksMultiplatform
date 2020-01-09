@@ -9,3 +9,6 @@ INSERT OR FAIL INTO TodoModel(id, userId, title, completed) VALUES (?, ?, ?, ?);
 selectAll:
 SELECT *
 FROM TodoModel;
+
+clearItems:
+DELETE FROM TodoModel;

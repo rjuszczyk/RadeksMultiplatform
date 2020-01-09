@@ -13,7 +13,6 @@ class MainViewModel (
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
 
     fun observeState(completion: (NativeMainViewModel.State) -> (Unit)) = nativeMainViewModel.getStateFlow().toCompletion(coroutineScope, completion)
-//    fun observeState(completion: (NativeMainViewModel.State) -> (Unit)) = completion(NativeMainViewModel.Loading())
 
     fun retry() {
         nativeMainViewModel.retry()

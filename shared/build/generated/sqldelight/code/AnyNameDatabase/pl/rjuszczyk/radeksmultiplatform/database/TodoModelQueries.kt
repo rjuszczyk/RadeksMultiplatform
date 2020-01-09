@@ -22,4 +22,6 @@ interface TodoModelQueries : Transacter {
     title: String,
     completed: Long
   )
+
+  fun clearItems()
 }

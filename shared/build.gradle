@@ -100,9 +100,6 @@ kotlin {
                 implementation deps.kotlin.coroutines.native
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3-native-mt") {
                     force = true
-//                    version {
-//                        strictly("1.3.3-native-mt")
-//                    }
                 }
                 implementation("io.ktor:ktor-client-ios:1.3.0-rc2")
                 implementation "io.ktor:ktor-client-serialization-native:1.3.0-rc2"

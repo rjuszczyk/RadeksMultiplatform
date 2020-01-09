@@ -90,4 +90,9 @@ private class TodoModelQueriesImpl(
     }
     notifyQueries(2123500395, {database.todoModelQueries.selectAll})
   }
+
+  override fun clearItems() {
+    driver.execute(404522866, """DELETE FROM TodoModel""", 0)
+    notifyQueries(404522866, {database.todoModelQueries.selectAll})
+  }
 }
